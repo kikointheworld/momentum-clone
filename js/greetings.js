@@ -15,8 +15,22 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings() {
+  const greetingDate = new Date();
+
+  const greetingHours = greetingDate.getHours();
+  console.log(greetingHours);
   const username = localStorage.getItem(USERNAME_KEY);
-  greeting.innerText = `Hello ${username}`;
+
+  if (greetingHours >= 6 && greetingHours <= 10) {
+    greeting.innerText = `Good morning ${username}!`;
+  } else if (greetingHours >= 11 && greetingHours <= 17) {
+    greeting.innerText = `Good afternoon ${username}!`;
+  } else if (greetingHours >= 18 && greetingHours <= 21) {
+    greeting.innerText = `Good evening ${username}!`;
+  } else {
+    greeting.innerText = `Good night ${username}!`;
+  }
+
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

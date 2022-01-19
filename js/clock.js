@@ -1,4 +1,4 @@
-const clock = document.querySelector("h2#clock");
+const clock = document.querySelector("span#clock");
 
 // 이걸로 숫자 만들지 말고 padStart로 이용하자 !
 function numFormat(variable) {
@@ -13,9 +13,10 @@ function getClock() {
 
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
+  // const seconds = String(date.getSeconds()).padStart(2, "0");
+  // clock.innerText = `${hours}:${minutes}:${seconds}`;
 
-  clock.innerText = `${hours}:${minutes}:${seconds}`;
+  clock.innerText = `${hours}:${minutes}`;
   // clock.innerText = `${numFormat(date.getHours())}:${numFormat(date.getMinutes())}:${numFormat(date.getSeconds())}`;
 }
 

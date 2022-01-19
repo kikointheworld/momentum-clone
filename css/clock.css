@@ -1,0 +1,18 @@
+.clock_section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.4vh;
+
+  height: 45vh;
+  width: 100%;
+}
+#clock {
+  color: rgb(233, 233, 233);
+  margin-top: 20vh;
+  width: 100%;
+  font-size: 150px;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px rgb(75, 75, 75);
+}
