@@ -10,7 +10,8 @@ function onGeoOK(position) {
       const city = document.querySelector(".weather--city");
       const icon = document.querySelector(".weather--icon");
 
-      icon.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+      icon.src =
+        "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
 
       weather.innerText = data.weather[0].main;
       city.innerText = data.name;

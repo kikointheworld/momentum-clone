@@ -15,24 +15,36 @@ function removeFilter(item, targetId) {
 }
 
 function deleteToDo(event) {
-  event.target.parentElement.remove();
-  const targetId = event.target.parentElement.id;
+  event.target.parentElement.parentElement.remove();
+  const targetId = event.target.parentElement.parentElement.id;
   toDos = toDos.filter((item) => removeFilter(item, targetId));
   saveToDos();
+}
+
+function checkToDo(event) {
+  const checked_li = event.target.parentElement.parentElement;
+  checked_li.classList.toggle("checked_list");
 }
 
 function paintToDo(newToDoObj) {
   const li = document.createElement("li");
   li.id = newToDoObj.id;
-  const span = document.createElement("spane");
+  const span = document.createElement("span");
   span.innerText = newToDoObj.text;
+  const btn_div = document.createElement("div");
   const button = document.createElement("button");
-  button.innerText = "✖";
+  button.innerText = "✘";
+  const checkBtn = document.createElement("button");
+  checkBtn.innerText = "✅";
 
   button.addEventListener("click", deleteToDo);
 
+  checkBtn.addEventListener("click", checkToDo);
+
   li.appendChild(span);
-  li.appendChild(button);
+  btn_div.append(checkBtn);
+  btn_div.append(button);
+  li.appendChild(btn_div);
   toDoList.appendChild(li);
 }
 

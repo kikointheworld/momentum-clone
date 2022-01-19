@@ -8,7 +8,7 @@
 }
 
 #todo-list {
-  list-style-type: none;
+  list-style-type: upper-roman;
   background-color: rgba(233, 233, 233, 0.4);
   width: 500px;
   border-radius: 20px;
@@ -33,16 +33,28 @@
   background-color: rgb(233, 233, 233);
   box-shadow: 2px 2px 2px rgb(75, 75, 75);
 }
+
+#todo-list li span {
+  font-family: "Jua", serif;
+}
+
 #todo-list li {
-  color: rgb(75, 75, 75);
-  font-size: 20px;
-  font-weight: 600;
+  color: black;
+  font-size: 22px;
+  font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 0;
 }
 #todo-list li button {
-  border-radius: 5px;
-  background-color: rgb(233, 233, 233);
-  box-shadow: 1px 1px 1px rgb(75, 75, 75);
+  border: 0;
+  font-size: 22px;
+  color: red;
+  background-color: rgba(233, 233, 233, 0);
+}
+
+.checked_list span {
+  text-decoration: line-through;
+  color: gray;
 }
