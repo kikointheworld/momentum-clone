@@ -18,7 +18,7 @@ function paintGreetings() {
   const greetingDate = new Date();
 
   const greetingHours = greetingDate.getHours();
-  console.log(greetingHours);
+  // console.log(greetingHours);
   const username = localStorage.getItem(USERNAME_KEY);
 
   if (greetingHours >= 6 && greetingHours <= 10) {

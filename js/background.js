@@ -1,14 +1,32 @@
 // Downloaded at this website
-// https://pixabay.com/photos/search/?cat=nature&
+// https://www.wallpaperbetter.com/ko/search?q=mac+os
 
-const images = ["0.jpg", "1.jpg", "2.jpg"];
+const images = [
+  "morningWallpaper.jpg",
+  "daytimeWallpaper.jpg",
+  "eveningWallpaper.jpg",
+  "nightWallpaper.jpg",
+];
 
-const chosenImage = images[Math.floor(Math.random() * images.length)];
+// const bgImage = document.createElement("img");
 
-const bgImage = document.createElement("img");
-
+// const chosenImage = images[Math.floor(Math.random() * images.length)];
 // bgImage.src = `img/${chosenImage}`;
 
-// const body = document.querySelector("body");
+const bgDate = new Date();
+const bgHours = bgDate.getHours();
 
-// body.style.backgroundImage = "url(" + bgImage.src + ")";
+let image = "";
+
+if (bgHours >= 6 && bgHours <= 10) {
+  image = `img/${images[0]}`;
+} else if (bgHours >= 11 && bgHours <= 17) {
+  image = `img/${images[1]}`;
+} else if (bgHours >= 18 && bgHours <= 21) {
+  image = `img/${images[2]}`;
+} else {
+  image = `img/${images[3]}`;
+}
+
+const body = document.querySelector("body");
+body.style.backgroundImage = "url(" + image + ")";

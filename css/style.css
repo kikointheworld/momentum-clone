@@ -10,21 +10,28 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* 
-body {
-  background-image: url("https://cdn.pixabay.com/photo/2019/08/19/15/13/eiffel-tower-4416700__340.jpg");
-} */
-
 .hidden {
   display: none;
 }
 
 body {
-  height: 100vh;
-  /* background-image: url('../img/main.jpeg'); */
-  background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbSmjo%2Fbtq7Zf4Ikd4%2FXGfH6lgsikBqjI7sbtiZOk%2Fimg.jpg");
-
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: center; */
+}
+
+@keyframes scaleUpBtn {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+button:hover,
+.a_list a:hover {
+  will-change: transform;
+  animation: scaleUpBtn 1s linear infinite;
 }

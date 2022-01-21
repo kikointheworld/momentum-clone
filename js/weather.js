@@ -13,9 +13,19 @@ function onGeoOK(position) {
       icon.src =
         "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
 
+      // clear weather icon is bad, so I use custom icon only if weather is clear.
+      if (data.weather[0].icon == "01d") {
+        icon.src = "img/" + "sunny.png";
+        icon.classList.add("clearIconProperty");
+      } else if (data.weather[0].icon == "01n") {
+        icon.src = "img/" + "moon.png";
+        icon.classList.add("clearIconProperty");
+        // https://www.flaticon.com/search?word=moon&order_by=4&type=icon
+      } else {
+        icon.classList.remove("clearIconProperty");
+      }
       weather.innerText = data.weather[0].main;
       city.innerText = data.name;
-      console.log(data.name, data.weather);
     })
   );
 }

@@ -13,7 +13,6 @@
 .weather--city {
   display: block;
   text-shadow: 2px 2px 2px rgb(75, 75, 75);
-  margin-right: 10px;
 }
 .weather--weather {
   font-size: 30px;
@@ -25,7 +24,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  filter: grayscale(30%);
 }
 
 .a_list a {
@@ -41,4 +39,9 @@
 
 .weather--block {
   display: block;
+}
+
+.clearIconProperty {
+  height: 50px;
+  margin-right: 10px;
 }
